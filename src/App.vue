@@ -1,19 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <Layout>
+    <Header 
+      slot="header"
+      title="Stock Trader App" 
+      :menus="menus"
+    />
+    <router-view slot="container"></router-view>
+  </Layout>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import {
+  Layout,
+  Header
+} from "./components/design"
+import { menus } from "./mock"
 
 export default {
-  name: 'App',
+  data() {
+    return {
+      menus: [
+        ...menus
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    Layout,
+    Header
   }
 }
+
 </script>
 
 <style>
