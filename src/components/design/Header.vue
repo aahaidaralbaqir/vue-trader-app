@@ -16,6 +16,7 @@
           <router-link
             :to="menu.path"
             tag="a"
+            active-class="active"
             class="nav-link"
           >
             {{ menu.name }}
@@ -24,7 +25,12 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a href="" class="nav-link">Ahmad haidar</a>
+          <a href="/stock" class="nav-link">End Days</a>
+        </li>
+        <li class="nav-item">
+          <a href="" class="btn btn-primary">Save</a>
+          &nbsp;
+          <a href="" class="btn btn-danger">Load</a>
         </li>
       </ul>
     </div>

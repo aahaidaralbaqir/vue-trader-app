@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+import "./plugins"
 // use library
-import libraries, { router } from "./plugins"
-import {  withPlugin } from "./utils"
+import { router, store } from "./plugins"
 
 Vue.config.productionTip = false
 
-withPlugin(Vue,libraries)
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')
 
