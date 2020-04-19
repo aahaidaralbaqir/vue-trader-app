@@ -18,11 +18,15 @@
 
 <script>
 
+
 import StockBox from "./components/StockBox"
 import StockItem from "./components/StockItem"
 import StockAction from "./components/StockAction"
 
+import Serializer from "../../mixins/serialize"
+
 export default {
+  mixins: [Serializer],
   data() {
     return {
       stocks : []
@@ -38,25 +42,14 @@ export default {
       return `$ ${value}`
     }
   },
-  beforeCreate() {
-    console.log('before create index.vue')
-  },
   created() {
-    console.log('created index.ue')
-  },
-  beforeMount() {
-    console.log('before mounted index.vue')
-  },
-  mounted() {
-    console.log('mounted index.vue')
-  },
-  beforeUpdate() {
-    console.log('before update index.vue')
-  },
-  updated() {
-    console.log('updated index.cue')
-  }
 
+    this.stocks = this.$store.getters['stock/getStocks']
+    this.eventHub.$on('buy-stock',
+      data => 
+        this.$store.dispatch('portfolio/buyStock',data
+    ))
+  }
 }
 </script>
 

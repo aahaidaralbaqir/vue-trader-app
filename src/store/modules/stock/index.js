@@ -6,8 +6,8 @@ const state = {
 }
 
 const getters = {
-  stocks(state) {
-    state.stocks
+  getStocks(state) {
+    return state.stocks
   }
 }
 
@@ -21,8 +21,8 @@ const mutations = {
 }
 
 const actions = {
-  buyStock({commit}) {
-    commit()
+  buyStock({commit},order) {
+    commit(stockTypes.BUY_STOCK,order)
   },
   setStocks({commit}) {
     commit(stockTypes.SET_STOCK,stocks)

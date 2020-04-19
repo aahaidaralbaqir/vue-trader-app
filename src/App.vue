@@ -28,6 +28,9 @@ export default {
   components: {
     Layout,
     Header
+  },
+  created() {
+    this.$store.dispatch('stock/setStocks')
   }
 }
 

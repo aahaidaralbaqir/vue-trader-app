@@ -3,12 +3,10 @@ import Vuex from "vuex"
 import Vue from "vue"
 
 import routes from "../routes"
-import { stockStore } from "./modules"
+import { stock,portfolio } from "../store"
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
-
-
 
 // configure router
 export const router = new VueRouter({
@@ -18,6 +16,7 @@ export const router = new VueRouter({
 
 export const store = new Vuex.Store({
   modules: {
-    stock: stockStore
+    stock,
+    portfolio
   }
 });

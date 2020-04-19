@@ -6,9 +6,9 @@ export default [
     id: 2, name: 'TWIITER', price: 220
   },
   {
-    id: 1, name: 'FACEBOOK', price: 300
+    id: 3, name: 'FACEBOOK', price: 300
   },
   {
-    id: 1, name: 'EBAY', price: 500
+    id: 4, name: 'EBAY', price: 500
   },
 ]

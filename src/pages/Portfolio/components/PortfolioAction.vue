@@ -8,9 +8,9 @@
     <button 
       class="btn btn-success"
       :disabled="quantity | notNegatif"
-      @click.prevent="buyStock()"
+      @click.prevent="sellStock"
     >
-    Buy
+    Sell
     </button>
   </div>
 </template>
@@ -23,21 +23,17 @@ import {
 
 export default {
   mixins: [Serializer],
+  props: ['stock'],
   data(){
     return {
       quantity: 0
     }
   },
-  props: ['stock'],
   methods: {
-    buyStock() {
-      const data = this.serialize(this.stock,this.quantity)
-      this.eventHub.$emit('buy-stock',data)
-      this.quantity = 0
+    sellStock() {
+        // const data = this.serialize(this.stock,this.quantity)
+        
     }
-  },
-  computed: {
- 
   },
   filters: {
     notNegatif(value) {

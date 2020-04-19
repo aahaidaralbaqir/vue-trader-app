@@ -6,7 +6,7 @@ import "./plugins"
 import { router, store } from "./plugins"
 
 Vue.config.productionTip = false
-
+Vue.prototype.eventHub = new Vue()
 
 new Vue({
   router,
